@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Fuzzy Trader</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <h1>Fuzzy Trader</h1>
+    <h3>Create Wallet</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="createWallet()">
+        <input type="text" id="wallet-name" placeholder="Name the new wallet">
+        <input type="submit" value="Create">
+    </form>
+
+    <div id="editForm">
+        <h3>Apply</h3>
+        <label id="walletIdLabel">Wallet</label><br />
+        <select name="wallets" id="walletId">
+            <option>Choose a wallet</option>
+        </select><br /><br />
+        <label label-for="quantityAssetsForecast">Quantity Assets Forecast</label><br />
+        <input type="number" pattern="[0-9]*" min="5" max="100" value="3" step="5" id="quantityAssetsForecast"><br /><br />
+
+        <form action="javascript:void(0);">
+            <label label-for="quantityAssetsForecast">Would you like to apply?</label><br />
+            <input type="number" pattern="[0-9]*" min="100" step="100" id="valueToApply" placeholder="USD/$"><br />
+            <small id="valueToApplyHelp" class="text-muted">We using values in USD.</small>
+
+            <p id="counter"></p>
+            <table>
+                <tr>
+                    <th>Score</th>
+                    <th>Name</th>
+                    <th>Symbol</th>
+                    <th>Price</th>
+                    <th>Amount</th>
+                    <th></th>
+                </tr>
+                <tbody id="assets"></tbody>
+            </table>
+            <small id="assetsHelp" class="text-muted">We're using moving average for the last 50 days based on the closing value.</small>
+        </form>
+    </div>
+
+    <div>
+        <h3>Dashboard Wallet</h3>
+        <p id="counterWalletAssets"></p>
+        <table id="walletInvestiment">
+            <tr>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Symbol</th>
+                <th>Purchased</th>
+                <th>Applied</th>
+                <th>Amount</th>
+                <th></th>
+            </tr>
+            <tbody id="walletAssets"></tbody>
+        </table>
+    </div>
+    <script src="js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        setWalletCombo();
+        getItems();
+    </script>
+</body>
+</html>

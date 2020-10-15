@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  --primary: #2A7AE4;
+  --black: #000000;
+  --blackLighter: #9E9E9E;
+  --grayLight: #F5F5F5;
+  --grayMedium: #e5e5e5; 
+  --white: #FFFFFF;
+  --frontEnd: #6BD1FF;
+  --backEnd: #00C86F;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+} 
+
+#root {
+  min-height: calc(100vh - var(--bodyPaddingTop));
+  display: flex;
+  flex-direction: column;
+}
+
+.text-muted {
+  color: #6c757d;
+}
+
+.small, small {
+  font-size: 80%;
+  font-weight: 400;
+}
+
+table thead th {
+  text-align: left;
+}
+
+table tbody td.currency,
+table tbody td.number {
+  text-align: right;
+  color:var(--backEnd);
+}
+
+table tbody td#amount.number  {
+  color: var(--primary);
+}
+
+table tbody td#applied.currency  {
+  color: var(--blackLighter);
+}
+
+.hidden {
+  display: none;
+}
+
+td#symbol {
+  padding: 10px;
+}
+
+td#symbol span {
+  background: var(--primary);
+  border-radius: 5px;
+  padding: 7px;
+}
+
+.BTC {
+  background: #b78901 !important;
+}
+

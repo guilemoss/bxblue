@@ -1,0 +1,23 @@
+﻿body {
+}
+
+.text-muted {
+    color: #6c757d;
+}
+
+.small, small {
+    font-size: 80%;
+    font-weight: 400;
+}
+
+.placeholder{
+
+}
+
+table tbody tr > td:last-child{
+    text-align: right !important;
+}
+
+.currency {
+    text-align: right;
+}
